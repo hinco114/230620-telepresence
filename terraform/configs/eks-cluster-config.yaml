@@ -1,0 +1,40 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: telep-test
+  region: ap-northeast-2
+
+vpc:
+  clusterEndpoints:
+    publicAccess: true
+    privateAccess: true
+  subnets:
+    private:
+      ap-northeast-2a:
+        id: subnet-07fe8e05a29df6e3a
+      ap-northeast-2b:
+        id: subnet-0c413edab4b9e7f28
+    public:
+      ap-northeast-2a:
+        id: subnet-0cec55c061a7e23fe
+      ap-northeast-2b:
+        id: subnet-0cf7acc7f0598a430
+
+
+managedNodeGroups:
+  - name: ng-1
+    instanceSelector:
+      vCPUs: 2
+      memory: "4" # 4 GiB, unit defaults to GiB
+    spot: true
+    desiredCapacity: 1
+    volumeSize: 80
+    ssh:
+      allow: true # will use ~/.ssh/id_rsa.pub as the default ssh key
+    iam:
+      withAddonPolicies:
+        autoScaler: true
+    privateNetworking: true
+    subnets:
+      - subnet-0cec55c061a7e23fe
