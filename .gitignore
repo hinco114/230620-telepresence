@@ -1,0 +1,12 @@
+# editor
+.idea
+
+# env
+.env
+.envrc
+*.env
+
+# terraform
+.terraform.lock*
+.terraform
+terraform.tfstate*
