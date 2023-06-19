@@ -10,3 +10,6 @@
 .terraform.lock*
 .terraform
 terraform.tfstate*
+
+# node
+node_modules
