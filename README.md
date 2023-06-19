@@ -136,7 +136,7 @@ intercept 여부에 따라 traffic 이 전달되는지 확인할 수 있습니�
 telepresence quit
 ```
 
-11. AWS 리소스 삭제
+11. 리소스 정리하기 (잊지말자!)
 ```shell
 cd $(git rev-parse --show-toplevel)/terraform
 eksctl delete cluster -f configs/eks-cluster-config.yaml
