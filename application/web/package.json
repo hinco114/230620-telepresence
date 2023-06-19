@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node main.js",
-    "build:http": "docker buildx build -t ghcr.io/hinco114/230620-telepresence:http --platform linux/amd64 . --push",
-    "build:mongo": "docker buildx build -t ghcr.io/hinco114/230620-telepresence:mongo --platform linux/amd64 . --push",
-    "build:redis": "docker buildx build -t ghcr.io/hinco114/230620-telepresence:redis --platform linux/amd64 . --push"
+    "build": "docker buildx build -t ghcr.io/hinco114/230620-telepresence --platform linux/amd64 . --push"
   },
   "author": "",
   "license": "ISC",

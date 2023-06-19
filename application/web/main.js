@@ -19,7 +19,6 @@ http.createServer((req, res) => {
 
 
 // ---------------------- Mongo ----------------------
-
 if (ENV_NODE_IP) {
   const uri = `mongodb://${ENV_NODE_IP}:30000`;
   const client = new MongoClient(uri, {
