@@ -12,15 +12,14 @@ vpc:
   subnets:
     private:
       ap-northeast-2a:
-        id: subnet-07fe8e05a29df6e3a
+        id: subnet-0caf48a84ee59cd40
       ap-northeast-2b:
-        id: subnet-0c413edab4b9e7f28
+        id: subnet-0cff78d31fe74ba5e
     public:
       ap-northeast-2a:
-        id: subnet-0cec55c061a7e23fe
+        id: subnet-071213ff800e42572
       ap-northeast-2b:
-        id: subnet-0cf7acc7f0598a430
-
+        id: subnet-0c272e41ab8fde274
 
 managedNodeGroups:
   - name: ng-1
@@ -36,5 +35,8 @@ managedNodeGroups:
       withAddonPolicies:
         autoScaler: true
     privateNetworking: true
+    securityGroups:
+      attachIDs:
+        - sg-0ee4684d1dbf88e3a
     subnets:
-      - subnet-0cec55c061a7e23fe
+      - subnet-071213ff800e42572
