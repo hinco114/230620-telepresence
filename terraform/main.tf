@@ -26,6 +26,19 @@ resource "aws_security_group" "allow_my_ip" {
       "${data.http.my_ip.response_body}/32",
     ]
   }
+
+  ingress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = [
+      module.vpc.vpc_cidr_block
+    ]
+  }
+}
+
+output "sg_id" {
+  value = aws_security_group.allow_my_ip.id
 }
 
 resource "aws_elasticache_cluster" "demo_cluster" {
